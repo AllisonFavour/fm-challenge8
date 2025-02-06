@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-// VARIABLES FOR COLOR AND FONT 
+// VARIABLES FOR COLOR AND FONT
 $VeryDarkGrayishBlue: hsl(217, 19%, 35%);
 $DesaturatedDarkBlue: hsl(214, 17%, 51%);
 $GrayishBlue: hsl(212, 23%, 69%);
@@ -22,119 +22,252 @@ $font-manrope: "Manrope";
 
 // STYLES FOR BODY
 body {
-    height: 100vh;
-    background-color: $LightGrayishBlue;
-    font-family: $font-manrope;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  background-color: $LightGrayishBlue;
+  font-family: $font-manrope;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 // STYLES FOR .MAIN - child element to body, parent to .container
 .main {
-    width: 100%;
-    min-width: 350px;
-    max-width: 1440px;
-    color: red;
-    border: 1px solid green;
-    padding: 2rem;
+  width: 100%;
+  min-width: 350px;
+  max-width: 1440px;
+  // color: red;
+  // border: 1px solid green;
+  padding: 2rem;
 }
 
 // STYLES FOR .CONTAINER - child element to .main, parent to .img and .content
 .container {
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); // Light shadow
+  // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 // STYLES FOR DRAWER IMAGE - sibling element to .content, both child element to .container
 .img {
-    width: 100%;
-    height: auto;
-    border: none;
+  width: 100%;
+  height: auto;
+  border: none;
 }
 
 .content {
-    background-color: #fff;
-    padding: 2rem;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  background-color: #fff;
+  padding: 2rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  position: relative;
 
-    h1 {
-        color: $VeryDarkGrayishBlue;
-        font-size: 1.31rem;
-        font-weight: 700;
-    }
+  h1 {
+    color: $VeryDarkGrayishBlue;
+    font-size: 1.31rem;
+    font-weight: 700;
+  }
+
+  p {
+    color: $DesaturatedDarkBlue;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-block-end: 1rem;
+  }
 }
 
 .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .profile {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 100%;
-        }
-    
-        .info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
     }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      span {
+        color: $VeryDarkGrayishBlue;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      span + span {
+        color: $DesaturatedDarkBlue;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
-
 .share-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    padding: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding: 10px;
+  background-color: $LightGrayishBlue;
+  cursor: pointer;
+  position: relative;
+  // top: 10px;
+  z-index: 1000;
+}
+
+.mobile-share {
+  display: none;
+  background-color: $VeryDarkGrayishBlue;
+  padding: 30px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $GrayishBlue;
+    letter-spacing: 6px;
+    margin-inline-end: 14px;
+    vertical-align: top;
+  }
+
+  img {
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-inline-end: 10px;
+    vertical-align: top;
+  }
 }
 
 footer {
-    padding-block: 10px;
+  padding-block: 10px;
+  color: $VeryDarkGrayishBlue;
 }
 
-
 @media (min-width: 768px) {
+  .container {
+    width: 760px;
+    height: fit-content;
+    // min-height: 50vh;
+    display: flex;
+    flex-direction: row;
+    // justify-content: stretch;
+    align-items: stretch;
+    border-radius: 8px;
+    position: relative;
+  }
 
-    .container {
-        width: 800px;
-        min-height: 50vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+  .img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .content {
+    // flex: 1;
+    // // width: 60%;
+    // height: 100%;
+    // position: relative;
+    // left: -30px;
+    // border-top-right-radius: 8px;
+    // border-bottom-right-radius: 8px;
+
+    flex: 1; // Makes it take the remaining space after .img
+    background-color: #fff;
+    padding: 3rem;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: -30px; // Instead of left: -30px;
+
+    h1 {
+      font-size: 1.8rem;
     }
 
-    .img {
-        width: 40%;
-        height: auto;
+    p {
+      margin-block: 8px;
     }
 
-    .content {
-        width: 60%;
-        height: 100%;
+    .show {
+      display: block;
+      position: absolute;
+      width: max-content;
+      border-radius: 8px;
+      position: absolute;
+      right: -84px;
+      bottom: 90px;
+      padding: 20px 26px;
 
-        h1 {
-            font-size: 1.8rem;
-        }
+      span {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $GrayishBlue;
+        letter-spacing: 6px;
+        margin-inline-end: 14px;
+        vertical-align: top;
+      }
 
-        p {
-            margin-block: 8px;
-        }
+      img {
+        color: #fff;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        margin-inline-end: 10px;
+        vertical-align: top;
+      }
+
+      ::after {
+        content: "";
+        position: absolute;
+        bottom: -20px; // Moves it below the menu
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-color: $VeryDarkGrayishBlue transparent transparent transparent; // Ensure it’s the correct color
+        // background-color: red;
+      }
     }
+  }
+}
 
+// MOBILE RESPONSIVENESS
+@media (max-width: 767px) {
+  .img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
 
+  .content {
+    position: relative;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  // SHARE MENU POSITION FOR MOBILE - SIDE BY SIDE WITH SHARE ICON
+  .show {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
 }
