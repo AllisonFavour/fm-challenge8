@@ -152,7 +152,6 @@ footer {
   }
   .content {
     flex: 1;
-    background-color: #fff;
     padding: 3rem;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -171,8 +170,8 @@ footer {
     width: max-content;
     border-radius: 8px;
     position: absolute;
-    right: -84px;
-    bottom: 90px;
+    right: -76px;
+    bottom: 100px;
     padding: 20px 26px;
   }
   .content .show span {

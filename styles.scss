@@ -36,7 +36,6 @@ body {
   width: 100%;
   min-width: 350px;
   max-width: 1440px;
-  // color: red;
   // border: 1px solid green;
   padding: 2rem;
 }
@@ -160,14 +159,13 @@ footer {
   color: $VeryDarkGrayishBlue;
 }
 
+// MEDIA QUERY FOR A MINIMUM OF 768PX AND ABOVE TO CATER FOR TABLETS AND DESKTOPS
 @media (min-width: 768px) {
   .container {
     width: 760px;
     height: fit-content;
-    // min-height: 50vh;
     display: flex;
     flex-direction: row;
-    // justify-content: stretch;
     align-items: stretch;
     border-radius: 8px;
     position: relative;
@@ -182,20 +180,12 @@ footer {
   }
 
   .content {
-    // flex: 1;
-    // // width: 60%;
-    // height: 100%;
-    // position: relative;
-    // left: -30px;
-    // border-top-right-radius: 8px;
-    // border-bottom-right-radius: 8px;
-
     flex: 1; // Makes it take the remaining space after .img
-    background-color: #fff;
     padding: 3rem;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    margin-left: -30px; // Instead of left: -30px;
+    margin-left: -30px; // move to left and still keep the width intact Instead of left: -30px;
+    
 
     h1 {
       font-size: 1.8rem;
@@ -211,8 +201,8 @@ footer {
       width: max-content;
       border-radius: 8px;
       position: absolute;
-      right: -84px;
-      bottom: 90px;
+      right: -76px;
+      bottom: 100px;
       padding: 20px 26px;
 
       span {
@@ -236,7 +226,7 @@ footer {
       ::after {
         content: "";
         position: absolute;
-        bottom: -20px; // Moves it below the menu
+        bottom: -20px; // Moves it below .share-menu
         left: 50%;
         transform: translateX(-50%);
         border-width: 10px;
@@ -248,7 +238,7 @@ footer {
   }
 }
 
-// MOBILE RESPONSIVENESS
+// MOBILE RESPONSIVENESS FOR MAXIMUM WIDTH PF 767PX AND BELOW
 @media (max-width: 767px) {
   .img {
     border-top-left-radius: 8px;
